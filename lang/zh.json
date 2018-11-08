@@ -1,0 +1,9 @@
+{
+	"COMMON" : {
+		"TEXT_EN" : "Eng",
+		"TEXT_ZH" : "中"
+	},
+	"MOVIES" : "Movies 2",
+	"FRIENDS" : "Friends 2",
+	"MESSAGES" : "Messages 2"
+}

@@ -1,7 +1,110 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+	<title>MYP</title>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		
+		<!-- Angular Material requires Angular.js Libraries -->
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-animate.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-aria.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-messages.min.js"></script>
 
+		<!-- Angular Material Library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.8/angular-material.min.js"></script>
+		
+		<script src="js/angular-translate.min.js"></script>
+		<script src="js/angular-translate-loader-static-files.min.js"></script>
+		
+		<!-- Custom -->
+		<script src="js/main.js"></script>
+		
+		
+		<!-- Angular Material style sheet -->
+		<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.8/angular-material.min.css">
+		
+		<!-- Theme -->
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3pro.css">
+		<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-teal.css">
+	</head>
 <body>
-Index
+	<div ng-app="MyApp" ng-controller="MyAppCtrl">
+
+		<nav class="w3-sidebar w3-bar-block w3-card" id="mySidebar" ng-controller="translateCtrl">
+			<div class="w3-container w3-theme-d2">
+				<span onclick="closeSidebar()" class="w3-button w3-display-topright w3-large">X</span>
+				<br>
+				<div class="w3-padding w3-center">
+					M
+					<!--
+					<img class="w3-circle" src="img_avatar.jpg" alt="avatar" style="width:75%">
+					-->
+				</div>
+			</div>
+			<a class="w3-bar-item w3-button" href="#" ng-click="changeLanguage('en')" translate="COMMON.TEXT_EN"></a>
+			<a class="w3-bar-item w3-button" href="#" ng-click="changeLanguage('zh')" translate="COMMON.TEXT_ZH"></a>
+			<a class="w3-bar-item w3-button" href="#">{{ 'MOVIES' | translate }}</a>
+			<a class="w3-bar-item w3-button" href="#">{{ 'FRIENDS' | translate }}</a>
+			<a class="w3-bar-item w3-button" href="#">{{ 'MESSAGES' | translate }}</a>
+		</nav>
+
+		<header class="w3-top w3-bar w3-theme">
+			<button class="w3-bar-item w3-button w3-xxxlarge w3-hover-theme" onclick="openSidebar()">&#9776;</button>
+			<h1 class="w3-bar-item">Movies</h1>
+		</header>
+
+		<div class="w3-container" style="margin-top:90px">
+			<hr>
+			<div class="w3-cell-row">
+				<div class="w3-cell" style="width:30%">
+					<!--<img class="w3-circle" src="img_avatar.jpg" style="width:100%">-->
+				</div>
+				<div class="w3-cell w3-container">
+					<h3>Frozen</h3>
+					<p>The response to the animations was ridiculous.</p>
+				</div>
+			</div>  
+			<hr>
+			<div class="w3-cell-row">
+				<div class="w3-cell" style="width:30%">
+					<!--<img class="w3-circle" src="img_avatar.jpg" style="width:100%">-->
+				</div>
+				<div class="w3-cell w3-container">
+					<h3>The Fault in Our Stars</h3>
+					<p>Touching, gripping and genuinely well made.</p>
+				</div>
+			</div>
+			<hr>
+			<div class="w3-cell-row">
+				<div class="w3-cell" style="width:30%">
+					<!--<img class="w3-circle" src="img_avatar.jpg" style="width:100%">-->
+				</div>
+				<div class="w3-cell w3-container">
+					<h3>The Avengers</h3>
+					<p>A huge success for Marvel and Disney.</p>
+				</div>
+			</div>
+			<hr>
+		</div>
+
+		<!--
+		<footer class="w3-container w3-bottom w3-theme w3-margin-top">
+			<h3>Footer</h3>
+		</footer>
+		-->
+	</div>
+		
+	<script>
+		closeSidebar();
+		function openSidebar() {
+			document.getElementById("mySidebar").style.display = "block";
+		}
+		function closeSidebar() {
+			document.getElementById("mySidebar").style.display = "none";
+		}
+	</script>
+
 </body>
 
 </html>
